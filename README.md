@@ -12,7 +12,7 @@
 
 **Languages & data:** Python · SQL · pandas · NumPy  
 **Storage:** PostgreSQL (Supabase) · SQLite · SQLAlchemy  
-**Pipelines & ops:** GitHub Actions (scheduled ETL, CI) · pytest · Render · Vercel · Google App Engine  
+**Pipelines & ops:** Apache Airflow · dbt · pandera (data quality) · Docker Compose · GitHub Actions (scheduled ETL, CI) · pytest · Render · Vercel · Google App Engine  
 **APIs & apps:** FastAPI · Flask · Streamlit · aiohttp / httpx (async ingestion) · React + Vite  
 **Data sources I've integrated:** TWSE OpenAPI · TAIFEX · FinMind · yfinance · SEC EDGAR · Google Sheets API
 
@@ -30,6 +30,7 @@
 | Project | What it does | Stack |
 |---|---|---|
 | [**StockCapitalFlow**](https://github.com/allen-0777/StockCapitalFlow) · [live](https://stock-capital-flow.vercel.app) | Production daily ETL of TWSE / TAIFEX / FinMind institutional-flow data into Postgres, with retry/rate-limited ingestion, batched upserts, freshness checks, and a FastAPI + React dashboard | Python, FastAPI, Postgres 17, GitHub Actions, pytest |
+| [**tw-market-data-pipeline**](https://github.com/allen-0777/tw-market-data-pipeline) | Airflow-orchestrated daily batch pipeline for TWSE / TAIFEX data: raw lake landing, pandera quality gates, idempotent Postgres COPY loads, dbt staging → marts with 71 tests, one-command Docker Compose | Airflow, dbt, Postgres 17, pandera, Docker, GitHub Actions |
 | [**stock**](https://github.com/allen-0777/stock) | Streamlit dashboard for Taiwan after-market data: institutional buy/sell rankings, futures OI, FX, and a moving-average backtester; async fetching + Google Sheets export | Python, pandas, Streamlit, httpx |
 | [**self_healing_agent**](https://github.com/allen-0777/self_healing_agent) | Agent framework that reflects on tool failures, retries with an adjusted strategy, and persists what worked; sandboxed execution and JSON run logs | Python, Claude API, pytest |
 | [**nofomo**](https://github.com/allen-0777/nofomo) | Trade journal that records trades via natural language and analyzes FOMO vs. planned trades across multi-market, multi-currency portfolios | Python, Flask, SQLAlchemy, SQLite |
