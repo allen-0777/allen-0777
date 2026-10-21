@@ -39,5 +39,5 @@
 ## 📫 Contact
 
 - Email: `<聯絡信箱>`
-- LinkedIn: `<LinkedIn 網址>`
+- LinkedIn: [allen-chan-959591226](https://www.linkedin.com/in/allen-chan-959591226)
 - Résumé: `<履歷連結>`
